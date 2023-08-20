@@ -1,0 +1,296 @@
+{% extends 'navbar.html' %}
+{% block main %}
+{% load static %}
+
+<!-- Carousel Start -->
+<div class="carousel">
+    <div class="container-fluid">
+        <div class="owl-carousel">
+            <div class="carousel-item">
+                <div class="carousel-img" >
+                    <img src="{% static 'img/kartik.png' %}" alt="Image" style="height: 600px;" >
+                </div>
+                <div class="carousel-text">
+                    <h1>Sell and Purchase</h1>
+                    <p>
+                        Sell and Purchase Your Second Hand Products Here
+                    </p>
+                    <div class="carousel-btn">
+                        {% if request.session.student %}
+
+                                  <!-- UPLOAD  -->
+                     <a class="btn btn-custom" href="{% url 'addproduct' %}">Sell Product</a>
+
+                        {% else %}
+                        <a class="btn btn-custom" href="{% url 'student_login' %}">Sell Product</a>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="{% static 'img/img4.png' %}" alt="Image" style="height: 600px;">
+                </div>
+                <div class="carousel-text">
+                    <h1>Easily Sharing of Things</h1>
+                    <p>
+                        Easily arrangements of cource books notes and other things.
+                    </p>
+                    <div class="carousel-btn">
+                        {% if request.session.student %}
+
+                       <!-- UPLOAD -->
+                       <a class="btn btn-custom" href="{% url 'addproduct' %}">Sell Product</a>
+            
+
+                        {% else %}
+
+                        <a class="btn btn-custom" href="{% url 'student_login' %}">Sell Product</a>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="{% static 'img/secondhandimg2.png' %}" alt="Image" style="height: 600px;">
+                </div>
+                <div class="carousel-text">
+                    <h1>Save Money and Time</h1>
+                    <p>
+                        Easily Availability of Products at Lowest Price
+                    </p>
+                    <div class="carousel-btn">
+                        {% if request.session.student %}
+
+                        <!-- UPLOAD -->
+                        <a class="btn btn-custom" href="{% url 'addproduct' %}">Sell Product</a>
+
+
+                        {% else %}
+
+                        <a class="btn btn-custom" href="{% url 'student_login' %}">Sell Product</a>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+<!-- Video Modal Start-->
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- 16:9 aspect ratio -->
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+                        allow="autoplay"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ 
+
+
+<!-- Service Start -->
+<div class="service">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Facilities You Get?</p>
+            <h2>Easily sharing of second hand products!!</h2>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-diet"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Time Saving</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-water"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Pure</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-healthcare"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Saves Money & Time</h3>
+                        <p>Sell and Buy your second hand products inside campus only and save your time and money both.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-education"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Primary Education</h3>
+                        <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                <div class="service-icon">
+                        <i class="flaticon-home"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>All under One Roof</h3>
+                        <p>Easy sharing of products inside hostel only and students don't have to go somewhere outside.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="flaticon-social-care"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>Social Sharing</h3>
+                        <p>Sharing things inside campus itself increasing the social sharing among the students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+
+<!-- Facts Start -->
+
+<!-- <div class="facts" data-parallax="scroll" data-image-src="{% static 'img/facts.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-home"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-plus" data-toggle="counter-up">150</h3>
+                        <p>Countries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-charity"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-plus" data-toggle="counter-up">400</h3>
+                        <p>Volunteers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-kindness"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-dollar" data-toggle="counter-up">10000</h3>
+                        <p>Our Goal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="facts-item">
+                    <i class="flaticon-donation"></i>
+                    <div class="facts-text">
+                        <h3 class="facts-dollar" data-toggle="counter-up">5000</h3>
+                        <p>Raised</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Facts End -->
+
+<!-- Blog Start -->
+
+<!-- <div class="blog">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Our Blog</p>
+            <h2>Latest news & articles directly from our blog</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="{% static 'img/blog-1.jpg' %}" alt="Image" style="height: 200px;">
+                    </div>
+                    <div class="blog-text">
+                        <h3><a href="#">Think Before your waste food</a></h3>
+                        <p>
+                            India has committed itself to fighting hunger at home and worldwide. This is an effort to
+                            spread awareness about food wastage.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="{% static 'img/blog-2.jpg' %}" alt="Image" style="height: 200px;">
+                    </div>
+                    <div class="blog-text">
+                        <h3><a href="#">Battling Food Wastage and Hunger</a></h3>
+                        <p>
+                            Sometimes there are a few complications because of which food is wasted. Except for them,
+                            this is a very simple problem with colossal possibilities of simple solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="{% static 'img/blog-3.jpg' %}" alt="Image" style="height: 200px;">
+                    </div>
+                    <div class="blog-text">
+                        <h3><a href="#">Don't waste food Give it to others</a></h3>
+                        <p>
+                            Wasting food is not a good practice at all both for the economy and also to the environment
+                            or to our own ethical justification.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Blog End -->
+
+{% endblock %}
